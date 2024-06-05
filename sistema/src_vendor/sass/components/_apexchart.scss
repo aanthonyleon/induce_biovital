@@ -1,0 +1,11 @@
+
+
+// !!!To revise
+// Bar charts hover text colors
+@each $name, $color in $theme-text-colors {
+	.apexcharts-bar-hover-#{$name} {
+		.apexcharts-bar-area:hover {
+			fill: $color !important;
+		}
+	}
+}

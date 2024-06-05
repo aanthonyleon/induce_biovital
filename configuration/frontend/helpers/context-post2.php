@@ -1,0 +1,1 @@
+<?php $VAR = '<?php include("../helpers/base-article.php"); ?>'; ?>

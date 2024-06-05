@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seleccionar Hora</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h2>Seleccionar Hora 1:</h2>
+<input type="time" id="hora1">
+
+<h2>Seleccionar Hora 2:</h2>
+<select id="hora2" disabled>
+  <!-- Opciones de horas -->
+</select>
+
+<script>
+$(document).ready(function(){
+    $('#hora1').on('change', function(){
+        var hora1 = $(this).val();
+        $.ajax({
+            url: 'x.php',
+            type: 'POST',
+            data: {hora1: hora1},
+            success: function(response){
+                $('#hora2').html(response);
+                $('#hora2').prop('disabled', false);
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
